@@ -150,6 +150,48 @@ const NodejsLogo = () => (
   </svg>
 );
 
+const TimesFMLogo = () => (
+  <svg className="w-3.5 h-3.5 shrink-0 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </svg>
+);
+
+const PandasLogo = () => (
+  <svg className="w-3.5 h-3.5 shrink-0 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 3h18v18H3z" />
+    <path d="M9 3v18" />
+    <path d="M15 3v18" />
+    <path d="M3 9h18" />
+    <path d="M3 15h18" />
+  </svg>
+);
+
+const YFinanceLogo = () => (
+  <svg className="w-3.5 h-3.5 shrink-0 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 3v18h18" />
+    <path d="M18 9l-6 6-4-4-5 5" />
+  </svg>
+);
+
+const ChartJsLogo = () => (
+  <svg className="w-3.5 h-3.5 shrink-0 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 20V10" />
+    <path d="M12 20V4" />
+    <path d="M6 20v-6" />
+  </svg>
+);
+
+const HttpLogo = () => (
+  <svg className="w-3.5 h-3.5 shrink-0 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" />
+    <path d="M12 11h4" />
+    <path d="M12 15h4" />
+    <path d="M8 9h2" />
+    <path d="M8 13h2" />
+  </svg>
+);
+
 const NanobotLogo = () => (
   <svg className="w-3.5 h-3.5 shrink-0 text-[#00c8ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="11" width="18" height="10" rx="2"/>
@@ -203,6 +245,38 @@ export default function Projects() {
   }, []);
 
   const PROJECTS_DATA: Project[] = [
+    {
+      id: 8,
+      category: "Quantitative Finance / AI Model",
+      title: "Yapay Zeka Destekli Finansal Tahmin Modeli",
+      description: "Google TimesFM 2.5 zaman serisi temel modeli ve DeepSeek-V3 LLM entegrasyonuyla geliştirilmiş kurumsal finansal tahmin platformu. Geleneksel modellerden farklı olarak Arbitraj Fiyatlama Teorisi (APT) tabanlı çalışan sistem; BIST100, USD/TRY, ^VIX ve sektörel maliyet sürücülerini (Brent, SOXX) dışsal değişken (covariate) olarak işler. 7 günlük hisse senedi projeksiyonları üreterek finansal gerekçelerini interaktif grafikler ve Türkçe analitik raporlar halinde sunar.",
+      coverGradient: "from-[#7D2AE8]/20 via-[#00C4CC]/10 to-[#0d0e12]",
+      coverPattern: (
+        <div className="absolute inset-0 flex items-center justify-center opacity-30 select-none">
+          <div className="relative w-32 h-32 flex items-center justify-center">
+            <div className="absolute w-28 h-20 border-b border-l border-white/20 flex items-end p-1">
+              <div className="w-3 h-8 bg-gradient-to-t from-[#7D2AE8] to-[#00C4CC] rounded-t mr-1.5 opacity-80" />
+              <div className="w-3 h-12 bg-gradient-to-t from-[#7D2AE8] to-[#00C4CC] rounded-t mr-1.5 opacity-80" />
+              <div className="w-3 h-6 bg-gradient-to-t from-[#7D2AE8] to-[#00C4CC] rounded-t mr-1.5 opacity-80" />
+              <div className="w-3 h-16 bg-gradient-to-t from-[#7D2AE8] to-[#00C4CC] rounded-t mr-1.5 opacity-80 animate-pulse" />
+              <div className="w-3 h-10 bg-gradient-to-t from-[#7D2AE8] to-[#00C4CC] rounded-t opacity-80" />
+            </div>
+            <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#00C4CC] animate-ping" />
+          </div>
+        </div>
+      ),
+      techs: [
+        { name: "TimesFM 2.5", icon: <TimesFMLogo /> },
+        { name: "DeepSeek-V3", icon: <DeepSeekLogo /> },
+        { name: "FastAPI", icon: <FastApiLogo /> },
+        { name: "Pandas", icon: <PandasLogo /> },
+        { name: "yfinance", icon: <YFinanceLogo /> },
+        { name: "Chart.js", icon: <ChartJsLogo /> },
+        { name: "Asynchronous HTTP", icon: <HttpLogo /> }
+      ],
+      githubUrl: "https://github.com/Harun-Badur/Borsa-Fiyat-Tahminleme-Modeli",
+      glowClass: "hover:border-[#7D2AE8]/40 hover:shadow-[0_0_30px_rgba(125,42,232,0.12)]"
+    },
     {
       id: 1,
       category: "3D Simulation / AI",
