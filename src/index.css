@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0d0e12;
+  --color-bg-secondary: #16181d;
+  --color-bg-tertiary: #1e222b;
+  
+  --color-cyber-green: #00C4CC;
+  --color-cyber-blue: #7D2AE8;
+  --color-cyber-pink: #ff007f;
+  --color-cyber-yellow: #ffbd2e;
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+  --font-mono: "Fira Code", "Consolas", monospace;
+
+  --shadow-neon-green: 0 0 15px rgba(0, 196, 204, 0.2);
+  --shadow-neon-blue: 0 0 15px rgba(125, 42, 232, 0.2);
+  --shadow-neon-pink: 0 0 15px rgba(255, 0, 127, 0.2);
+}
+
+@utility glass-card {
+  background-color: rgba(22, 24, 29, 0.4);
+  backdrop-filter: blur(12px);
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@utility glass-card-hover {
+  &:hover {
+    background-color: rgba(22, 24, 29, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@utility text-gradient-green-blue {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-cyber-green), var(--color-cyber-blue));
+}
+
+@utility text-gradient-blue-pink {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-cyber-blue), var(--color-cyber-pink));
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--color-bg-primary);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 196, 204, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(125, 42, 232, 0.04) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e222b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff88;
+}
+
+/* Keyframes for simple cursor blink */
+@keyframes typing-cursor {
+  50% { border-color: transparent; }
+}
+
+.animate-typing-cursor {
+  animation: typing-cursor 1s step-end infinite;
+}
